@@ -31,6 +31,18 @@ on boot
     write /dev/cpuset/background/cpus 0-7
     write /dev/cpuset/system-background/cpus 0-7
 
+    # DoubleTap2Wake
+    write /sys/android_touch/doubletap2wake 1
+
+    # F-Sync
+    write /sys/module/sync/parameters/fsync_enabled 0
+
+    # Backlight dimmer
+    write /sys/module/mdss_fb/parameters/backlight_dimmer 1
+
+    # Sweep2Sleep
+    write /sys/sweep2sleep/sweep2sleep 0
+
 on charger
     # Enable UFS powersaving
     write /sys/devices/soc/1da4000.ufshc/clkscale_enable 1
